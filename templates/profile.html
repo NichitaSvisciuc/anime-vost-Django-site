@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Anime Template">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Anime | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/plyr.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+
+    <style type="text/css">
+        
+        /* The Modal (background) */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          /*background-color: rgb(0,0,0); 
+          background-color: rgba(0,0,0,0.4); */
+        }
+
+        .modal-back {
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+            background-color: black;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            opacity: 0.4;
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+          background-color: #fefefe;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 20px;
+          border: 1px solid #888;
+          width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button */
+        .close {
+          color: #aaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        .bootstrap-form-selector-1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .add_playlist {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+    </style>
+
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="{% url 'home' %}">
+                            <img src="{% static 'img/logo.png' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a href="./index.html">Homepage</a></li>
+                                <li><a href="./categories.html">Categories <span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="./categories.html">Categories</a></li>
+                                        <li><a href="./anime-details.html">Anime Details</a></li>
+                                        <li><a href="./anime-watching.html">Anime Watching</a></li>
+                                        <li><a href="./blog-details.html">Blog Details</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="./blog.html">Our Blog</a></li>
+                                <li><a href="#">Contacts</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="header__right">
+                        <a href="{% url 'profile' %}"><img style="width: 30px; height: 30px; margin-top: -10px;" class="rounded-circle account-img" src="{{ user.profile.profile_photo.url }}"></a>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <a href="./categories.html">Categories</a>
+                        <span>Romance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Anime Section Begin -->
+    <section class="anime-details spad">
+        <div class="container">
+            <div class="anime__details__content">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="anime__details__pic set-bg" data-setbg="{{ user.profile.profile_photo.url }}" style="width: 260px; height: 260px; border-radius: 200px;">
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="anime__details__text">
+                            <div class="anime__details__title">
+                                <h3>{{ user.username }}</h3>
+                                <span>フェイト／ステイナイト, Feito／sutei naito</span>
+                            </div>
+                            <p style="color: white;">Your description</p>
+                            <p><!-- Every human inhabiting the world of Alcia is branded by a “Count” or a number written on
+                                their body. For Hina’s mother, her total drops to 0 and she’s pulled into the Abyss,
+                                never to be seen again. But her mother’s last words send Hina on a quest to find a
+                            legendary hero from the Waste War - the fabled Ace! -->{{ user.profile.self_description }}</p>
+                            <div class="anime__details__widget">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <ul>
+                                            <li><span>Age:</span>{{ user.profile.age }} years</li>
+                                            <li><span>Experience:</span>{{ user.profile.anime_love_level }}</li>
+                                            <li><span>Gender:</span> {{ user.profile.gender }}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="anime__details__btn">
+                                <a href="#" class="follow-btn" id="Change_profile_pic_modal_triger_button">Change profile pic</a>
+                                <a href="#" class="follow-btn" id="Profile_info_update">Update profile info</a>
+                                <a href="#" class="watch-btn"><span>Your playlist</span> <i
+                                    class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Anime Section End -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-back" id="modal-background-1"></div>
+          <!-- Modal content -->
+          <div class="modal-content" style="width: 500px;">
+            <span class="close" id="close1">&times;</span>
+            <form method="POST" enctype="multipart/form-data" align="center">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" style="margin-top: 10px; width: 100px; padding: 8px 10px; border: 0; background: #d62f20; color: white;">Upload</button>
+            </form>
+          </div>
+
+        </div>
+
+        <div id="profile_info_update_modal" class="modal" style="overflow: hidden;">
+
+            <div class="modal-back" id="modal-background-2"></div>
+          <!-- Modal content -->
+          <div class="modal-content" style="width: 500px;">
+            <span class="close" id="close2">&times;</span>
+            <form method="POST" action="{% url 'update_profile_info' %}" align="center">
+                {% csrf_token %}
+                <div align="center">
+                    <input name="age" type="number" class="form-control" style="width: 300px;" placeholder="Enter your age"><br>
+
+                    <div class="bootstrap-form-selector-1">
+                        <select class="form-select" name="experience">
+                          <option selected>Select your anime experience</option>
+                          <option value="Experienced">Experienced</option>
+                          <option value="Watched few before">Watched few before</option>
+                          <option value="Newbie">Newbie</option>
+                        </select> <br><br><br>
+                    </div>
+
+                    <div class="bootstrap-form-selector-1">
+                        <select class="form-select" name="gender">
+                          <option selected>Select your gender</option>
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option>
+                        </select> <br><br><br>
+                    </div><br>
+
+                    <textarea name="description" placeholder="Enter info about you" class="form-control" style="width: 300px; height: 200px;"></textarea>
+                </div><br>
+                <button type="submit" style="margin-top: 10px; width: 100px; padding: 8px 10px; border: 0; background: #d62f20; color: white;">Upload</button>
+            </form>
+          </div>
+          <hr style="background: white; width: 300px;">
+        </div>
+        <div class="container">
+            <div class="row">
+                {% for playlist in user.useranimeplaylist.playlists.all %}
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="product__item">
+                            <div style="cursor: pointer;" class="product__item__pic set-bg" data-setbg="{{ playlist.preview_picture.url }}">
+                                <div class="add_playlist" onclick="window.location.href = '{{ playlist.get_absolute_url }}'"></div>
+                                <div class="view"><i class="fa fa-eye"></i> {{ playlist.get_views }}</div>
+                                <div class="ep" onclick="window.location.href = '{{ playlist.add_to_favourites }}'"><i class="fa-solid fa-heart"></i></div>
+                            </div>
+                         </a>
+                            <div class="product__item__text">
+                                <ul>
+                                    {% for category in playlist.categoryes.all %}
+                                        <li>{{ category.name }}</li>
+                                    {% endfor %}                             
+                                </ul>
+                                <h5><a href="#">{{ playlist.name }}</a></h5>
+                            </div>
+                        </div>
+                    </div>                     
+                {% endfor %}
+            </div>
+        </div>
+        <!-- Footer Section Begin -->
+        <footer class="footer">
+            <div class="page-up">
+                <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer__logo">
+                            <a href="./index.html"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="footer__nav">
+                            <ul>
+                                <li class="active"><a href="./index.html">Homepage</a></li>
+                                <li><a href="./categories.html">Categories</a></li>
+                                <li><a href="./blog.html">Our Blog</a></li>
+                                <li><a href="#">Contacts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+
+                      </div>
+                  </div>
+              </div>
+          </footer>
+          <!-- Footer Section End -->
+
+          <!-- Search model Begin -->
+          <div class="search-model">
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <div class="search-close-switch"><i class="icon_close"></i></div>
+                <form class="search-model-form">
+                    <input type="text" id="search-input" placeholder="Search here.....">
+                </form>
+            </div>
+        </div>
+        <!-- Search model end -->
+
+        <!-- Js Plugins -->
+        <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/player.js' %}"></script>
+        <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'js/mixitup.min.js' %}"></script>
+        <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+
+        <script type="text/javascript">
+                
+            var modal = document.getElementById("myModal");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("Change_profile_pic_modal_triger_button");
+
+            const modal_back1 = document.getElementById("modal-background-1")
+            modal_back1.addEventListener("click", (e) => {
+                modal.style.display = "none";
+            })
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+            const close = document.getElementById("close1")
+
+            // When the user clicks on the button, open the modal
+            btn.onclick = function() {
+              modal.style.display = "block";
+            }
+
+            close.addEventListener("click", (e) => {
+                modal.style.display = "none";
+            })
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+              modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+              if (event.target == modal) {
+                modal.style.display = "none";
+              }
+            }
+
+            //////////////////////////////////////////////////
+
+            var modal1 = document.getElementById("profile_info_update_modal");
+
+            // Get the button that opens the modal
+            var btn1 = document.getElementById("Profile_info_update");
+
+            // Get the <span> element that closes the modal
+            var span1 = document.getElementsByClassName("close")[0];
+            const close2 = document.getElementById("close2")
+
+            const modal_back2 = document.getElementById("modal-background-2")
+            modal_back2.addEventListener("click", (e) => {
+                modal1.style.display = "none";
+            })
+
+            close2.addEventListener("click", (e) => {
+                modal1.style.display = "none";
+            })
+
+            // When the user clicks on the button, open the modal
+            btn1.onclick = function() {
+              modal1.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span1.onclick = function() {
+              modal1.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+              if (event.target == modal1) {
+                modal1.style.display = "none";
+              }
+            }
+
+        </script>
+
+        <script src="https://kit.fontawesome.com/a14f8341f6.js" crossorigin="anonymous"></script>
+
+    </body>
+
+    </html>

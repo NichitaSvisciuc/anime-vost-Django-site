@@ -1,0 +1,32 @@
+1. Set up the project - Done
+2. Create models for movies and comments - Done
+3. Make a search engine - Done
+4. Make a profile page - Done
+5. Make an anime playlist for user - Done
+
+6. Anime info display page (slug url) - Done
+	1. Add likes to an anime
+	2. Its ranking by likes and views
+	3. Add views to them
+	4. Add comments to them 
+	5. Add categoryes to anime, possibility to have multiple categoryes
+
+7. Displaying anime by category - Done
+
+8. Display only a few amount of animes and when u'll click 'see all' it will redirect you to a page where they all are diplayed - Done
+
+9. Anime by top views - Done
+10. Authentication system - Done
+11. Possibility to log in with google and maybe other platforms, and password reset
+12. Show errors of registration or login if i failed it - Done
+
+13. An anime is not only a movie, it has a certain amount of episodes, and i will make it like a certain playlist with its episodes(maybe structured) - Done
+
+14. Paginator in 'all view' page - Done
+15. All episodes below player - Done
+16. Add different subscriptions
+17. Account password reset function - Done
+18. Add comments to a playlist - Done
+19. Add comments to an anime episode - Done
+
+M-am oprit pe : ...
